@@ -40,10 +40,10 @@ class EvolutionaryCFG:
         expression = 'S'
         for branch in individual:
             expression_old = expression
-            for symbol in symbols:
+            for symbol in self.symbols:
                 if symbol in expression:
                     i = expression.rindex(symbol)
-                    rules = grammar[symbol]
+                    rules = self.grammar[symbol]
                     replacement = rules[branch % len(rules)]
                     expression = expression[:i] + replacement + expression[i+1:]
                     break
@@ -54,7 +54,7 @@ class EvolutionaryCFG:
     def evaluate(self, individual):
         expression = self.express(individual)
         if expression not in self.score_cache.keys():
-            if any([symbol in expression for symbol in symbols]):
+            if any([symbol in expression for symbol in self.symbols]):
                 score = float('-inf')
             else:
                 try:
