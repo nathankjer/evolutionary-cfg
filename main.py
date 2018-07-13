@@ -1,3 +1,5 @@
+import math
+
 from optimizers import EvolutionaryCFG
 
 def evaluate(expression):
