@@ -25,7 +25,7 @@ class EvolutionaryCFG:
         self.toolbox.register('individual', tools.initRepeat, creator.Individual, self.toolbox.attr_int, num_attributes)
         self.toolbox.register('population', tools.initRepeat, list, self.toolbox.individual)
         self.toolbox.register('evaluate', self.evaluate)
-        self.toolbox.register('mate', tools.cxTwoPoint)
+        self.toolbox.register('mate', tools.cxOnePoint)
         self.toolbox.register('mutate', tools.mutUniformInt, low=0, up=255, indpb=0.05)
         self.toolbox.register('select', tools.selTournament, tournsize=3)
 
