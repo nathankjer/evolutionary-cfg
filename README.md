@@ -3,3 +3,5 @@ Optimization of context-free grammar expressions via genetic programming
 
 ## Dependencies
 deap
+
+![preview](/preview.png)
